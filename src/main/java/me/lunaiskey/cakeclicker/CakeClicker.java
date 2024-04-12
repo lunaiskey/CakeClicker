@@ -42,8 +42,11 @@ public final class CakeClicker extends JavaPlugin {
             @Override
             public void run() {
                 for (Player player : Bukkit.getOnlinePlayers()) {
+                    //per second upgrade impl
                     LunixPlayer lunixPlayer = PlayerManager.get().getLunixPlayer(player);
-                    lunixPlayer.incrementClicks(lunixPlayer.getUpgradeLevel(UpgradeType.PER_SECOND)*2);
+                    lunixPlayer.incrementClicks(lunixPlayer.getUpgradeLevel(UpgradeType.PER_SECOND));
+
+                    //update guis
                     InventoryHolder holder = player.getOpenInventory().getTopInventory().getHolder();
                     if (holder instanceof LunixHolder lunixHolder) {
                         InventoryManager.get().getInv(lunixHolder.getID()).updateGUI(player);
