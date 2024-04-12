@@ -1,0 +1,7 @@
+name: CakeClicker
+version: $version
+main: me.lunaiskey.cakeclicker.CakeClicker
+api-version: '1.19'
+commands:
+  cakeclicker:
+    usage: /<command>
